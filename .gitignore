@@ -1,0 +1,4 @@
+.DS_Store
+.idea/
+src/backend/node_modules/
+data/*
