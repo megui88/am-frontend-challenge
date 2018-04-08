@@ -11,7 +11,6 @@ class Hotel {
     }
 
     /**
-     * @param {string} repository
      * @return {Object}
      */
     getCollection() {
@@ -31,6 +30,7 @@ class Hotel {
      * @return {Promise}
      */
     list(filters) {
+        filters = this.parseFilters(filters);
         return new Promise((resolv, reject) => {
             this.getCollection().then((collection) => {
                 collection.find(filters).toArray((err, result) => {
@@ -42,6 +42,26 @@ class Hotel {
                 });
             });
         });
+    }
+
+    /**
+     * @todo Fast fix, it requires more complexity
+     * @param {Object} filters
+     * @return {Object}
+     */
+    parseFilters(filters) {
+        // eslint-disable-next-line guard-for-in
+        for (let key in filters) {
+            if (parseInt(filters[key])) {
+                filters[key] = parseInt(filters[key]);
+                continue;
+            }
+            if (Array.isArray(filters[key])) {
+                continue;
+            }
+            filters[key] = new RegExp('.*' + filters[key], 'i');
+        }
+        return filters;
     }
 
     /**
@@ -84,7 +104,7 @@ class Hotel {
     }
 
     /**
-     * @todo SET ID
+     * @todo SET ID, requires logic of autoincrement
      * @param {Object} newHotel
      * @return {Promise}
      */

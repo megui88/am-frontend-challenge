@@ -2,3 +2,4 @@
 .idea/
 src/backend/node_modules/
 data/*
+src/frontend/node_modules/

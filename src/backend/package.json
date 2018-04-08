@@ -18,7 +18,8 @@
     "nodemon": "^1.17.3"
   },
   "scripts": {
-    "start": "yarn install ; if test \"$NODE_ENV\" = \"production\" ; then node ./index.js ; else ./node_modules/.bin/nodemon ./index.js ; fi",
+    "start": "if test \"$NODE_ENV\" = \"production\" ; then node ./index.js ; else ./node_modules/.bin/nodemon ./index.js ; fi",
+    "seeds": "node ./seeds/index.js",
     "eslint": "./node_modules/.bin/eslint ./ --fix"
   }
 }

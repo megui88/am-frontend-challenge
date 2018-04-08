@@ -1,7 +1,7 @@
 version: '2'
 services:
     backend:
-        build: ./src/backend
+        image: node:slim
         environment:
           - NODE_ENV=development
           - MONGODB_USER="usermongo"
@@ -15,6 +15,20 @@ services:
           - mongodb
         depends_on:
           - mongodb
+        command: bash -c "cd /src && yarn install && yarn start"
+    frontend:
+        image: node:slim
+        environment:
+          - NODE_ENV=development
+        volumes:
+          - ./src/frontend:/src:rw
+        ports:
+          - 4200:4200
+        links:
+          - backend
+        depends_on:
+          - backend
+        command: bash -c "cd /src && yarn install && yarn start"
     mongodb:
         image: mongo:latest
         environment:
