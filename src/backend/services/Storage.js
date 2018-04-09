@@ -8,9 +8,9 @@ class Storage {
      */
     constructor(client, config) {
         this.client = client;
-        this.connection = null;
+        this.connection = 0;
         this.connections = [];
-        this.collection = 0;
+        this.collection = null;
         this.url = null;
         this.db = null;
 

@@ -15,7 +15,7 @@ export class HotelComponent implements OnInit {
     stars: string = '';
 
     constructor(private hotelService: HotelService, svgService: SVGCacheService) {
-        svgService.setBaseUrl({ baseUrl: 'http://localhost:4200/assets/' });
+        svgService.setBaseUrl({ baseUrl: '/assets/' });
     }
 
     ngOnInit() {

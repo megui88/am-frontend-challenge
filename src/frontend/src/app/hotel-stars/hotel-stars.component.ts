@@ -13,21 +13,24 @@ import {SVGCacheService} from "ng-inline-svg";
 })
 export class HotelStarsComponent implements OnInit {
     @Output() onSetStart = new EventEmitter<number>();
-    private starsField: FormControl;
+    radioStarsField: FormControl;
 
     setStars(stars: number) {
         this.onSetStart.emit(stars);
         return stars;
     }
 
+    select(stars: number){
+        console.log(stars);
+    }
     private searchTerms = new Subject<string>();
 
     constructor(svgService: SVGCacheService) {
-        svgService.setBaseUrl({ baseUrl: 'http://localhost:4200/assets/' });
+        svgService.setBaseUrl({ baseUrl: '/assets/' });
     }
 
     ngOnInit(): void {
-        this.starsField = new FormControl();
-        this.starsField.valueChanges.subscribe((stars: number) => this.setStars(stars));
+        this.radioStarsField = new FormControl();
+        this.radioStarsField.valueChanges.subscribe((stars: number) => this.setStars(stars));
     }
 }

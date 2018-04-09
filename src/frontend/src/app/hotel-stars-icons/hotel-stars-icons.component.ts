@@ -11,7 +11,7 @@ export class HotelStarsIconsComponent implements OnInit {
     starsIcons: number[];
 
     constructor(svgService: SVGCacheService) {
-        svgService.setBaseUrl({ baseUrl: 'http://localhost:4200/assets/' });
+        svgService.setBaseUrl({ baseUrl: '/assets/' });
     }
 
     ngOnInit(): void {

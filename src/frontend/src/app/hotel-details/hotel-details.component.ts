@@ -14,7 +14,7 @@ export class HotelDetailsComponent implements OnInit {
     hotel: Hotel;
 
     constructor(private route: ActivatedRoute, private hotelService: HotelService, svgService: SVGCacheService) {
-        svgService.setBaseUrl({baseUrl: 'http://localhost:4200/assets/'});
+        svgService.setBaseUrl({baseUrl: '/assets/'});
     }
 
     setHote(hotel: Hotel) {
