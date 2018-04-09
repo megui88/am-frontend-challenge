@@ -1,0 +1,54 @@
+<div id="stars-component">
+    <p>
+        <label for="starsField">
+            <input id="starsField" type="radio" value="0" class="radic" name="starsField" #starsField1
+                   (keyup)="select(starsField1.value)" [formControl]="starsField"/>
+            <strong>Todas las estrellas</strong>
+        </label>
+    </p>
+    <p>
+        <label for="starsField1">
+            <input id="starsField1" type="radio" value="5" name="starsField" #starsField1
+                   (keyup)="select(starsField1.value)" [formControl]="starsField"/>
+            <div class="stars" aria-label="star" [inlineSVG]="'icons/filters/star.svg'"></div>
+            <div class="stars" aria-label="star" [inlineSVG]="'icons/filters/star.svg'"></div>
+            <div class="stars" aria-label="star" [inlineSVG]="'icons/filters/star.svg'"></div>
+            <div class="stars" aria-label="star" [inlineSVG]="'icons/filters/star.svg'"></div>
+            <div class="stars" aria-label="star" [inlineSVG]="'icons/filters/star.svg'"></div>
+        </label>
+    </p>
+    <p>
+        <label for="starsField2">
+            <input id="starsField2" type="radio" value="4" name="starsField" #starsField2
+                   (keyup)="select(starsField2.value)" [formControl]="starsField"/>
+            <div class="stars" aria-label="star" [inlineSVG]="'icons/filters/star.svg'"></div>
+            <div class="stars" aria-label="star" [inlineSVG]="'icons/filters/star.svg'"></div>
+            <div class="stars" aria-label="star" [inlineSVG]="'icons/filters/star.svg'"></div>
+            <div class="stars" aria-label="star" [inlineSVG]="'icons/filters/star.svg'"></div>
+        </label>
+    </p>
+    <p>
+        <label for="starsField3">
+            <input id="starsField3" type="radio" value="3" name="starsField" #starsField3
+                   (keyup)="select(starsField3.value)" [formControl]="starsField"/>
+            <div class="stars" aria-label="star" [inlineSVG]="'icons/filters/star.svg'"></div>
+            <div class="stars" aria-label="star" [inlineSVG]="'icons/filters/star.svg'"></div>
+            <div class="stars" aria-label="star" [inlineSVG]="'icons/filters/star.svg'"></div>
+        </label>
+    </p>
+    <p>
+        <label for="starsField4">
+            <input id="starsField4" type="radio" value="2" name="starsField" #starsField4
+                   (keyup)="select(starsField4.value)" [formControl]="starsField"/>
+            <div class="stars" aria-label="star" [inlineSVG]="'icons/filters/star.svg'"></div>
+            <div class="stars" aria-label="star" [inlineSVG]="'icons/filters/star.svg'"></div>
+        </label>
+    </p>
+    <p>
+        <label for="starsField5">
+            <input id="starsField5" type="radio" value="1" name="starsField" #starsField5
+                   (keyup)="select(starsField5.value)" [formControl]="starsField"/>
+            <div class="stars" aria-label="star" [inlineSVG]="'icons/filters/star.svg'"></div>
+        </label>
+    </p>
+</div>

@@ -1,0 +1,45 @@
+.div-component{
+    margin: 20px;
+    padding: 10px;
+    background-color: #FFFFFF;
+    border: 1px #EDEDED;
+}
+
+.hotel-image{
+    display: block;
+    max-height: 258px;
+}
+
+.price{
+    color: #DF6800;
+}
+
+@media (min-width: 600px) {
+    .content-info {
+        border-right: 0.05em dashed #CCCCCC;
+    }
+}
+
+@media (max-width: 600px) {
+    .content-info {
+        border-bottom: 0.05em dashed #CCCCCC;
+    }
+}
+
+h3.price {
+    font-size: 2.2rem;
+}
+
+.price label{
+    font-weight: 300;
+    font-size: 1.5rem;
+}
+
+.see-hotel{
+    background-color: #002C77;
+    border: #002C77;
+}
+
+h4{
+    color: #509BC5;
+}

@@ -1,0 +1,28 @@
+<div class="row div-component p-0 m-0 m-md-4"  *ngIf="hotel !== undefined">
+    <div class="col-md-4 p-1 align-content-center p-md-2">
+        <img [src]="'/assets/images/hotels/' + hotel.image" class=" img-fluid m-auto hotel-image"
+             onError="this.src='/assets/images/hotels/placeholder.jpg';">
+    </div>
+    <div class="col-md-5 m-1 content-info">
+        <div class="col-xl-12">
+            <h4>{{hotel.name}}</h4>
+        </div>
+        <div class="col-xl-12">
+            <app-hotel-stars-icons [stars]="hotel.stars"></app-hotel-stars-icons>
+        </div>
+        <div class="col-xl-12">
+            <app-hotel-amenity *ngFor="let amenity of hotel.amenities" [amenity]="amenity"></app-hotel-amenity>
+        </div>
+    </div>
+    <div class="col-md-2 m-auto text-center">
+        <div>
+            <p>Precio por noche por habitación</p>
+            <h3 class="price"><label>ARS</label>{{hotel.price}}</h3>
+
+            <a *ngIf="buttonDetails"  class="col-xl-12 btn btn-lg btn-primary see-hotel"
+               routerLink="/hotel/{{hotel.id}}">
+                Ver hotel
+            </a>
+        </div>
+    </div>
+</div>

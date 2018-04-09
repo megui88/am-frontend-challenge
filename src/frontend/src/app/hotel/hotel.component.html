@@ -1,0 +1,41 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12 col-md-3 mt-3 p-0 p-md-0 pl-md-4 m-0 m-md-0 pt-md-3">
+            <div class="col-sm-12  filter-component">
+                <button class="btn btn-link w-100" type="button" data-toggle="collapse" data-target="#collapseFilters"
+                        aria-expanded="true" aria-controls="collapseSearch">
+                    <h4 class="float-left">Filtros</h4>
+                    <div class="triangulo-down float-right"></div>
+                </button>
+            </div>
+            <div class="collapse show" id="collapseFilters">
+                <div class="col-sm-12  filter-component">
+                    <button class="btn btn-link w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseSearch"
+                            aria-expanded="true" aria-controls="collapseSearch">
+                        <div class="search-icon float-left" aria-label="search" [inlineSVG]="'icons/filters/search.svg'"></div>
+                        Nombre del Hotel
+                        <div class="triangulo-down float-right"></div>
+                    </button>
+                    <div class="collapse show" id="collapseSearch">
+                        <app-hotel-search (onNewResult)="onNewResult($event)"></app-hotel-search>
+                    </div>
+                </div>
+                <div class="col-sm-12  filter-component">
+                    <button class="btn btn-link w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseStars"
+                            aria-expanded="true" aria-controls="collapseStars">
+                        <div class="stars-icon float-left" aria-label="star" [inlineSVG]="'icons/filters/star.svg'"></div>
+                        Estrellas
+                        <div class="triangulo-down float-right"></div>
+                    </button>
+                    <div class="collapse show" id="collapseStars">
+                        <app-hotel-stars (onSetStart)="onFilterStarts($event)"></app-hotel-stars>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-9 m-0 p-0">
+            <app-hotel-card *ngFor="let hotel of hotels |async" [hotel]="hotel"></app-hotel-card>
+        </div>
+    </div>
+</div>
+

@@ -3,7 +3,10 @@ const logger = require('morgan');
 const bodyParser = require('body-parser');
 const app = express();
 const routes = require('./routes');
+const cors = require('cors');
 
+
+app.use(cors());
 app.use(logger(app.get('env') === 'development' ? 'dev' : 'tiny'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));

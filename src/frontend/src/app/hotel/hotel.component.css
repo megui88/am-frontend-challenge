@@ -1,0 +1,39 @@
+.container-fluid{
+    background-color: #F4F4F4;
+}
+
+.filter-component{
+    margin: 5px;
+    padding: 15px;
+    background-color: #FFFFFF;
+    border: 1px #EDEDED;
+    color: #157AB1 ;
+}
+
+.search-icon,.stars-icon{
+    display:inline-block;
+    width: 20px;
+    fill: #157AB1 ;
+}
+.filter-component button{
+    font-weight: bold;
+    color: #157AB1 ;
+}
+
+.triangulo-down {
+    width: 0;
+    height: 0;
+    margin-top: 3%;
+    border-top: 10px solid #157AB1;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+}
+
+.triangulo-up {
+    width: 0;
+    height: 0;
+    margin-top: 3%;
+    border-top: 10px solid #157AB1;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+}
